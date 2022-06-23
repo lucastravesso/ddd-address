@@ -5,7 +5,9 @@ import com.ddd.addressapi.core.repository.AddressRepository;
 import com.ddd.addressapi.core.service.AddressService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AddressServiceImpl implements AddressService {
 
     private final AddressRepository addressRepository;
