@@ -28,4 +28,5 @@ public class Address {
 
     private String numero;
 
+    private Boolean isActive;
 }
