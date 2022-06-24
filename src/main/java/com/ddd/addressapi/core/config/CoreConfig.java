@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
 @ComponentScan(basePackages = "com.ddd.addressapi.core")
-@EnableJpaRepositories(basePackages = "com.ddd.addressapi.repository")
+@EnableJpaRepositories(basePackages = "com.ddd.addressapi.core.repository")
 public class CoreConfig {
 }

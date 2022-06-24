@@ -3,6 +3,7 @@ package com.ddd.addressapi.core.service.implement;
 import com.ddd.addressapi.core.entity.Address;
 import com.ddd.addressapi.core.repository.AddressRepository;
 import com.ddd.addressapi.core.service.AddressService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,7 @@ public class AddressServiceImpl implements AddressService {
 
     private final AddressRepository addressRepository;
 
+    @Autowired
     public AddressServiceImpl(AddressRepository addressRepository) {
         this.addressRepository = addressRepository;
     }
@@ -24,7 +26,7 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public Address update(Address address, Long id) {
-        Address optAddress = addressRepository.findById(Math.toIntExact(id)).orElse(null);
+        Address optAddress = addressRepository.findById(id).orElse(null);
         if (optAddress != null){
             return addressRepository.saveAndFlush(optAddress);
         }
@@ -33,7 +35,7 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public Address delete(Long id) {
-        Address optAddress = addressRepository.findById(Math.toIntExact(id)).orElse(null);
+        Address optAddress = addressRepository.findById(id).orElse(null);
         if (optAddress != null){
             optAddress.setIsActive(!optAddress.getIsActive());
             return addressRepository.saveAndFlush(optAddress);
@@ -43,7 +45,7 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public Address findById(Long id) {
-        return addressRepository.findById(Math.toIntExact(id)).orElse(null);
+        return addressRepository.findById(id).orElse(null);
     }
 
     @Override
