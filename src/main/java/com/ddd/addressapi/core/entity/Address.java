@@ -15,18 +15,13 @@ public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String logradouro;
-
     private String complemento;
-
     private String cep;
-
     private String cidade;
-
     private String estado;
-
     private String numero;
-
     private Boolean isActive;
+    private Integer userId;
+
 }

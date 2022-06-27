@@ -26,4 +26,7 @@ public class AddressDTO {
     private String numero;
 
     private Boolean isActive;
+
+    private Integer userId;
+
 }
